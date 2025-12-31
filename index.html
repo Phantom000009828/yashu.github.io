@@ -5,10 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nivrashu Saini | SOC Analyst</title>
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
-
-<!-- ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -17,90 +14,94 @@ body{
   background:#0b0f14;
   color:#e6f1ff;
   font-family:'Orbitron',sans-serif;
-  overflow-x:hidden;
 }
 
 /* GRID */
 .grid{
-  position:fixed;
-  inset:-100%;
+  position:fixed;inset:-100%;
   background:
-    linear-gradient(#1f293733 1px,transparent 1px),
-    linear-gradient(90deg,#1f293733 1px,transparent 1px);
+   linear-gradient(#1f293733 1px,transparent 1px),
+   linear-gradient(90deg,#1f293733 1px,transparent 1px);
   background-size:60px 60px;
   animation:gridMove 25s linear infinite;
   z-index:-1;
 }
 @keyframes gridMove{
-  from{transform:translate(0,0)}
   to{transform:translate(-60px,-60px)}
 }
 
 /* NAV */
 nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  display:flex;justify-content:space-between;
   padding:20px 60px;
 }
-nav ul{display:flex;list-style:none;gap:30px}
-nav a{text-decoration:none;color:#9fb3c8;font-size:0.9rem}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{color:#9fb3c8;text-decoration:none}
 nav a:hover{color:#00eaff}
 
 /* HERO */
 .hero{
   min-height:90vh;
   display:flex;
-  align-items:center;
   justify-content:space-around;
-  gap:40px;
+  align-items:center;
 }
 .hero img{
-  width:250px;
+  width:240px;
   border-radius:50%;
   border:3px solid #1f2937;
-  box-shadow:0 0 25px #00eaff33;
-}
-
-/* NAME */
-.glitch{
-  font-size:3.2rem;
-  color:#e6f1ff;
-}
-
-/* SOCIALS */
-.socials{
-  margin-top:20px;
-  display:flex;
-  gap:20px;
 }
 .socials a{
-  font-size:1.5rem;
+  margin-right:15px;
+  font-size:1.4rem;
   color:#9fb3c8;
-  transition:0.3s;
 }
-.socials a:hover{
-  color:#00eaff;
-  transform:scale(1.2);
-}
+.socials a:hover{color:#00eaff}
 
-/* TERMINAL */
-.terminal{
-  margin:40px auto;
-  width:85%;
-  padding:20px;
+/* SECTION */
+section{padding:80px 60px}
+h2{color:#00eaff;margin-bottom:20px}
+
+/* DASHBOARD */
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+.card{
   background:#020617;
   border:1px solid #1f2937;
-  font-size:0.85rem;
-  height:160px;
-  overflow:auto;
+  padding:20px;
 }
+.card h3{color:#9fb3c8;font-size:0.9rem}
+.card p{font-size:2rem;color:#00eaff}
 
-/* SECTIONS */
-section{padding:80px 60px}
-h2{
-  margin-bottom:20px;
-  color:#00eaff;
+/* ALERT TABLE */
+.alerts{
+  margin-top:30px;
+  background:#020617;
+  border:1px solid #1f2937;
+}
+.alerts div{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 15px;
+  border-bottom:1px solid #1f2937;
+  font-size:0.85rem;
+}
+.badge{
+  padding:2px 8px;
+  border-radius:4px;
+}
+.critical{background:#7f1d1d;color:#fecaca}
+.high{background:#78350f;color:#fde68a}
+.medium{background:#1e3a8a;color:#bfdbfe}
+
+/* EXPERIENCE */
+.exp{
+  background:#020617;
+  border-left:3px solid #00eaff;
+  padding:20px;
 }
 
 /* SKILLS */
@@ -110,68 +111,61 @@ h2{
   padding:8px 14px;
   background:#020617;
   border:1px solid #1f2937;
-  color:#9fb3c8;
 }
-
-/* EXPERIENCE */
-.exp{
-  background:#020617;
-  padding:20px;
-  border-left:3px solid #00eaff;
-}
-.exp h3{color:#e6f1ff}
-.exp p{color:#9fb3c8;font-size:0.9rem}
 </style>
 </head>
 
 <body>
-
 <div class="grid"></div>
 
 <nav>
   <h2>NSOC</h2>
   <ul>
-    <li><a href="#about">About</a></li>
+    <li><a href="#dashboard">Dashboard</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <section class="hero">
   <div>
-    <h1 class="glitch">Nivrashu Saini</h1>
-    <p id="typing"></p>
-
+    <h1>Nivrashu Saini</h1>
+    <p>SOC Analyst Aspirant | Cybersecurity Enthusiast</p>
     <div class="socials">
-      <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
-
-  <img src="profile.jpg" alt="Nivrashu">
+  <img src="profile.jpg">
 </section>
 
-<div class="terminal" id="log"></div>
+<!-- SOC DASHBOARD -->
+<section id="dashboard">
+  <h2>SOC Monitoring Dashboard</h2>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    Associate SOC Analyst & Cybersecurity Enthusiast with hands-on experience
-    in SIEM monitoring, log analysis, Linux administration and network security.
-    Focused on blue-team operations and real-time threat detection.
-  </p>
+  <div class="dashboard">
+    <div class="card"><h3>Total Alerts</h3><p id="total">124</p></div>
+    <div class="card"><h3>Critical</h3><p id="critical">12</p></div>
+    <div class="card"><h3>High</h3><p id="high">34</p></div>
+    <div class="card"><h3>Medium</h3><p id="medium">78</p></div>
+  </div>
+
+  <div class="alerts" id="alertFeed">
+    <div><span>Suspicious SSH Login</span><span class="badge critical">Critical</span></div>
+    <div><span>Malware Hash Detected</span><span class="badge high">High</span></div>
+    <div><span>Port Scan Detected</span><span class="badge medium">Medium</span></div>
+  </div>
 </section>
 
 <section id="experience">
   <h2>Experience</h2>
   <div class="exp">
     <h3>Associate SOC Analyst</h3>
-    <p>Self Employed | Oct 2025 – Present</p>
+    <p>Oct 2025 – Present</p>
     <p>
-      • Monitor security alerts using SIEM tools<br>
-      • Analyze logs and investigate suspicious activity<br>
-      • Perform initial incident response and escalation
+      • SIEM monitoring & alert triage<br>
+      • Log analysis & threat investigation<br>
+      • Incident escalation & reporting
     </p>
   </div>
 </section>
@@ -181,43 +175,24 @@ h2{
   <div class="skills">
     <span>SIEM</span><span>Splunk</span><span>ELK</span>
     <span>Linux</span><span>Networking</span>
-    <span>Wireshark</span><span>Nmap</span>
-    <span>AWS Security</span>
+    <span>Wireshark</span><span>Nmap</span><span>AWS Security</span>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: yashsaini62007@icloud.com</p>
-</section>
-
 <script>
-/* TYPING */
-const text="SOC Analyst Aspirant | Cybersecurity Enthusiast | Linux & Networking";
-let i=0;
-function type(){
-  if(i<text.length){
-    document.getElementById("typing").innerHTML+=text[i++];
-    setTimeout(type,45);
-  }
-}
-type();
-
-/* LOGS */
-const logs=[
- "[INFO] SIEM connected successfully",
- "[ALERT] Unusual login detected",
- "[INFO] Correlating events...",
- "[SUCCESS] Incident closed",
- "[INFO] Continuous monitoring enabled"
+/* LIVE ALERT FEED */
+const alerts=[
+ ["Multiple Failed Logins","critical"],
+ ["Suspicious DNS Query","high"],
+ ["New Device Connected","medium"]
 ];
-let j=0;
 setInterval(()=>{
-  const log=document.getElementById("log");
-  log.innerHTML+=logs[j%logs.length]+"<br>";
-  log.scrollTop=log.scrollHeight;
-  j++;
-},1100);
+  const feed=document.getElementById("alertFeed");
+  const a=alerts[Math.floor(Math.random()*alerts.length)];
+  const div=document.createElement("div");
+  div.innerHTML=`<span>${a[0]}</span><span class="badge ${a[1]}">${a[1]}</span>`;
+  feed.prepend(div);
+},3000);
 </script>
 
 </body>
