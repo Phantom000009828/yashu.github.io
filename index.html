@@ -1,234 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>SOC Analyst Dashboard | Nivrashu Saini</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Nivrashu Saini | SOC Analyst Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
-  --bg:#020617;
-  --panel:#020b1c;
-  --accent:#22d3ee;
-  --text:#e5e7eb;
-  --muted:#94a3b8;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial}
+    body {
+      background: #020617;
+      color: #e5e7eb;
+      overflow-x: hidden;
+    }
 
-body{
-  background:var(--bg);
-  color:var(--text);
-  display:flex;
-  height:100vh;
-}
+    /* ===== BACKGROUND LOG STREAM ===== */
+    .log-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      opacity: 0.25;
+    }
 
-/* ===== SIDEBAR ===== */
-.sidebar{
-  width:260px;
-  background:linear-gradient(180deg,#020617,#020b1c);
-  padding:30px;
-  border-right:1px solid rgba(34,211,238,.2);
-}
+    #logs {
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      color: #22d3ee;
+      padding: 40px;
+      white-space: pre-wrap;
+    }
 
-.sidebar h1{
-  color:var(--accent);
-  font-size:26px;
-}
+    /* ===== HERO SECTION ===== */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: pulse 6s infinite;
+    }
 
-.sidebar p{
-  color:var(--muted);
-  margin-top:10px;
-  font-size:14px;
-}
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 rgba(34,211,238,0); }
+      50% { box-shadow: 0 0 80px rgba(34,211,238,0.08); }
+      100% { box-shadow: 0 0 0 rgba(34,211,238,0); }
+    }
 
-.nav{
-  margin-top:40px;
-}
+    .hero h1 {
+      font-size: 64px;
+      color: #22d3ee;
+      text-shadow: 0 0 25px rgba(34,211,238,0.6);
+    }
 
-.nav a{
-  display:block;
-  padding:12px;
-  margin:10px 0;
-  color:var(--text);
-  text-decoration:none;
-  border-radius:8px;
-  transition:.3s;
-}
+    .hero h2 {
+      margin-top: 15px;
+      font-size: 22px;
+      color: #e5e7eb;
+      min-height: 28px;
+    }
 
-.nav a:hover{
-  background:rgba(34,211,238,.1);
-  color:var(--accent);
-}
+    .hero-buttons {
+      margin-top: 30px;
+    }
 
-/* ===== MAIN ===== */
-.main{
-  flex:1;
-  padding:30px;
-  overflow-y:auto;
-}
+    .hero-buttons a {
+      margin: 10px;
+      padding: 14px 30px;
+      border-radius: 40px;
+      border: 1px solid #22d3ee;
+      color: #22d3ee;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: 500;
+    }
 
-/* ===== TOP STATS ===== */
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
+    .hero-buttons a:hover {
+      background: #22d3ee;
+      color: #020617;
+      box-shadow: 0 0 25px rgba(34,211,238,0.6);
+    }
 
-.card{
-  background:var(--panel);
-  padding:20px;
-  border-radius:12px;
-  border:1px solid rgba(34,211,238,.15);
-  position:relative;
-  overflow:hidden;
-}
+    /* ===== CONTENT SECTIONS ===== */
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 80px 20px;
+    }
 
-.card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,rgba(34,211,238,.15),transparent);
-  animation:scan 3s infinite;
-}
+    h3 {
+      color: #22d3ee;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
 
-@keyframes scan{
-  0%{transform:translateX(-100%)}
-  100%{transform:translateX(100%)}
-}
+    .skills span {
+      display: inline-block;
+      margin: 8px;
+      padding: 10px 18px;
+      border-radius: 20px;
+      background: rgba(34,211,238,0.08);
+      border: 1px solid #22d3ee;
+      font-size: 14px;
+    }
 
-.card h3{color:var(--muted);font-size:14px}
-.card strong{font-size:28px;color:var(--accent)}
+    .project {
+      margin-bottom: 30px;
+    }
 
-/* ===== ALERT FEED ===== */
-.alerts{
-  margin-top:40px;
-}
+    .project a {
+      color: #22d3ee;
+      text-decoration: none;
+    }
 
-.alert{
-  background:var(--panel);
-  padding:15px;
-  border-left:4px solid var(--accent);
-  margin-bottom:12px;
-  animation:fadeIn .6s ease;
-}
-
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(10px)}
-  to{opacity:1}
-}
-
-/* ===== PROJECTS ===== */
-.projects{
-  margin-top:40px;
-}
-
-.project{
-  background:var(--panel);
-  padding:20px;
-  border-radius:12px;
-  margin-bottom:20px;
-  border:1px solid rgba(34,211,238,.15);
-}
-
-.project h4{color:var(--accent)}
-.project p{color:var(--muted);margin:10px 0}
-.project a{color:var(--accent);text-decoration:none}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:800px){
-  body{flex-direction:column}
-  .sidebar{width:100%;border-right:none;border-bottom:1px solid rgba(34,211,238,.2)}
-}
-</style>
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
+<!-- BACKGROUND LOGS -->
+<div class="log-bg">
+  <pre id="logs"></pre>
+</div>
+
+<!-- HERO -->
+<div class="hero">
   <h1>Nivrashu Saini</h1>
-  <p>SOC Analyst L1<br>Linux | SIEM | Threat Detection</p>
+  <h2 class="typing"></h2>
 
-  <div class="nav">
-    <a href="#">Dashboard</a>
-    <a href="#projects">Incidents</a>
+  <div class="hero-buttons">
+    <a href="#projects">View Projects</a>
     <a href="https://www.linkedin.com/in/nivrashu-saini-2b880027b/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/Phantom000009828" target="_blank">GitHub</a>
   </div>
 </div>
 
-<!-- MAIN -->
-<div class="main">
+<!-- ABOUT -->
+<section>
+  <h3>About Me</h3>
+  <p>
+    SOC Analyst L1 aspirant with hands-on experience in Linux log analysis,
+    network scanning, and threat detection. Passionate about monitoring,
+    detecting, and analyzing real-world security incidents.
+  </p>
+</section>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="card">
-      <h3>Threat Alerts</h3>
-      <strong id="alerts">12</strong>
-    </div>
-    <div class="card">
-      <h3>Failed Logins</h3>
-      <strong id="logins">37</strong>
-    </div>
-    <div class="card">
-      <h3>Open Ports</h3>
-      <strong>18</strong>
-    </div>
-    <div class="card">
-      <h3>System Status</h3>
-      <strong>STABLE</strong>
-    </div>
+<!-- SKILLS -->
+<section>
+  <h3>Skills</h3>
+  <div class="skills">
+    <span>SOC Operations</span>
+    <span>Linux</span>
+    <span>Nmap</span>
+    <span>Log Analysis</span>
+    <span>SIEM</span>
+    <span>Incident Response</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h3>Projects</h3>
+
+  <div class="project">
+    <strong>Linux Log Analysis – SSH Brute Force Detection</strong><br>
+    Analyzed authentication logs to detect SSH brute-force attacks.<br>
+    <a href="https://github.com/Phantom000009828/soc-analyst-linux-log-analysis" target="_blank">
+      View on GitHub
+    </a>
   </div>
 
-  <!-- ALERT FEED -->
-  <div class="alerts" id="alertsFeed">
-    <h2 style="color:var(--accent);margin-bottom:15px">Live SIEM Alerts</h2>
+  <div class="project">
+    <strong>Nmap Network Scanning & Risk Analysis</strong><br>
+    Performed SYN scans to identify open ports and insecure services.<br>
+    <a href="https://github.com/Phantom000009828/Nmap-Network-Scanning-and-Risk-Analysis" target="_blank">
+      View on GitHub
+    </a>
   </div>
+</section>
 
-  <!-- PROJECTS -->
-  <div class="projects" id="projects">
-    <h2 style="color:var(--accent);margin-bottom:15px">Investigations</h2>
-
-    <div class="project">
-      <h4>SSH Brute Force Detection</h4>
-      <p>Analyzed Linux auth logs and detected repeated SSH login failures.</p>
-      <a href="https://github.com/Phantom000009828/soc-analyst-linux-log-analysis" target="_blank">View GitHub</a>
-    </div>
-
-    <div class="project">
-      <h4>Nmap Network Scanning & Risk Analysis</h4>
-      <p>Performed SYN scans and assessed insecure services.</p>
-      <a href="https://github.com/Phantom000009828/Nmap-Network-Scanning-and-Risk-Analysis" target="_blank">View GitHub</a>
-    </div>
-  </div>
-
-</div>
-
+<!-- JAVASCRIPT -->
 <script>
-const alerts=[
-  "Brute force detected from 192.168.1.10",
-  "Multiple failed SSH logins",
-  "Port scan detected on 22/tcp",
-  "Suspicious authentication behavior",
-  "SIEM correlation rule triggered"
-];
+  /* ===== TYPING EFFECT ===== */
+  const text = "SOC Analyst L1 | Linux | SIEM | Threat Detection";
+  let i = 0;
+  const typingEl = document.querySelector(".typing");
 
-const feed=document.getElementById("alertsFeed");
-let count=12;
+  function typeEffect() {
+    if (i < text.length) {
+      typingEl.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeEffect, 70);
+    }
+  }
+  typeEffect();
 
-setInterval(()=>{
-  const div=document.createElement("div");
-  div.className="alert";
-  div.innerText="[ALERT] "+alerts[Math.floor(Math.random()*alerts.length)];
-  feed.appendChild(div);
+  /* ===== SOC LOG STREAM ===== */
+  const logLines = [
+    "[INFO] SSH service running",
+    "[WARN] Failed login from 192.168.1.15",
+    "[ALERT] Brute force attempt detected",
+    "[OK] Firewall rules active",
+    "[SIEM] Correlation rule triggered",
+    "[SCAN] Port scan on 22/tcp",
+    "[INFO] Monitoring network traffic"
+  ];
 
-  count++;
-  document.getElementById("alerts").innerText=count;
-  document.getElementById("logins").innerText=Math.floor(Math.random()*50+20);
+  const logBox = document.getElementById("logs");
 
-  if(feed.children.length>6) feed.removeChild(feed.children[1]);
-},2000);
+  setInterval(() => {
+    const line = logLines[Math.floor(Math.random() * logLines.length)];
+    logBox.innerText += line + "\n";
+    logBox.scrollTop = logBox.scrollHeight;
+  }, 600);
 </script>
 
 </body>
