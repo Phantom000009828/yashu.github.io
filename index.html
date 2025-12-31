@@ -8,42 +8,46 @@
 <!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
-/* ================= RESET ================= */
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  background:#050510;
-  color:#00fff7;
+  background:#0b0f14;
+  color:#e6f1ff;
   font-family:'Orbitron',sans-serif;
   overflow-x:hidden;
 }
 
-/* ================= GRID BACKGROUND ================= */
+/* GRID */
 .grid{
   position:fixed;
   inset:-100%;
   background:
-    linear-gradient(#00fff722 1px,transparent 1px),
-    linear-gradient(90deg,#00fff722 1px,transparent 1px);
-  background-size:50px 50px;
-  animation:gridMove 20s linear infinite;
+    linear-gradient(#1f293733 1px,transparent 1px),
+    linear-gradient(90deg,#1f293733 1px,transparent 1px);
+  background-size:60px 60px;
+  animation:gridMove 25s linear infinite;
   z-index:-1;
 }
 @keyframes gridMove{
   from{transform:translate(0,0)}
-  to{transform:translate(-50px,-50px)}
+  to{transform:translate(-60px,-60px)}
 }
 
-/* ================= NAV ================= */
+/* NAV */
 nav{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:20px 60px;
 }
 nav ul{display:flex;list-style:none;gap:30px}
-nav a{text-decoration:none;color:#00fff7}
+nav a{text-decoration:none;color:#9fb3c8;font-size:0.9rem}
+nav a:hover{color:#00eaff}
 
-/* ================= HERO ================= */
+/* HERO */
 .hero{
   min-height:90vh;
   display:flex;
@@ -52,51 +56,71 @@ nav a{text-decoration:none;color:#00fff7}
   gap:40px;
 }
 .hero img{
-  width:260px;
+  width:250px;
   border-radius:50%;
-  box-shadow:0 0 30px #00fff7;
+  border:3px solid #1f2937;
+  box-shadow:0 0 25px #00eaff33;
 }
 
-/* GLITCH */
+/* NAME */
 .glitch{
-  font-size:3.5rem;
-  position:relative;
-}
-.glitch::before,.glitch::after{
-  content:attr(data-text);
-  position:absolute;left:0;top:0;
-}
-.glitch::before{
-  color:#ff00ff;
-  animation:glitch 2s infinite;
-}
-@keyframes glitch{
-  0%{transform:translate(0)}
-  20%{transform:translate(-2px,2px)}
-  40%{transform:translate(2px,-2px)}
+  font-size:3.2rem;
+  color:#e6f1ff;
 }
 
-/* ================= TERMINAL ================= */
+/* SOCIALS */
+.socials{
+  margin-top:20px;
+  display:flex;
+  gap:20px;
+}
+.socials a{
+  font-size:1.5rem;
+  color:#9fb3c8;
+  transition:0.3s;
+}
+.socials a:hover{
+  color:#00eaff;
+  transform:scale(1.2);
+}
+
+/* TERMINAL */
 .terminal{
-  margin:40px;
+  margin:40px auto;
+  width:85%;
   padding:20px;
-  border:1px solid #00fff7;
-  box-shadow:0 0 20px #00fff7;
-  background:#02020a;
+  background:#020617;
+  border:1px solid #1f2937;
   font-size:0.85rem;
   height:160px;
   overflow:auto;
 }
 
-/* ================= SECTIONS ================= */
+/* SECTIONS */
 section{padding:80px 60px}
+h2{
+  margin-bottom:20px;
+  color:#00eaff;
+}
+
+/* SKILLS */
 .skills span{
   display:inline-block;
-  margin:10px;
-  padding:10px 15px;
-  border:1px solid #00fff7;
-  box-shadow:0 0 10px #00fff7;
+  margin:8px;
+  padding:8px 14px;
+  background:#020617;
+  border:1px solid #1f2937;
+  color:#9fb3c8;
 }
+
+/* EXPERIENCE */
+.exp{
+  background:#020617;
+  padding:20px;
+  border-left:3px solid #00eaff;
+}
+.exp h3{color:#e6f1ff}
+.exp p{color:#9fb3c8;font-size:0.9rem}
 </style>
 </head>
 
@@ -108,6 +132,7 @@ section{padding:80px 60px}
   <h2>NSOC</h2>
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -115,9 +140,15 @@ section{padding:80px 60px}
 
 <section class="hero">
   <div>
-    <h1 class="glitch" data-text="Nivrashu Saini">Nivrashu Saini</h1>
+    <h1 class="glitch">Nivrashu Saini</h1>
     <p id="typing"></p>
+
+    <div class="socials">
+      <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
   </div>
+
   <img src="profile.jpg" alt="Nivrashu">
 </section>
 
@@ -126,9 +157,23 @@ section{padding:80px 60px}
 <section id="about">
   <h2>About Me</h2>
   <p>
-    Associate SOC Analyst & Cybersecurity Enthusiast with strong hands-on
-    experience in SIEM, log analysis, Linux, networking and threat monitoring.
+    Associate SOC Analyst & Cybersecurity Enthusiast with hands-on experience
+    in SIEM monitoring, log analysis, Linux administration and network security.
+    Focused on blue-team operations and real-time threat detection.
   </p>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="exp">
+    <h3>Associate SOC Analyst</h3>
+    <p>Self Employed | Oct 2025 – Present</p>
+    <p>
+      • Monitor security alerts using SIEM tools<br>
+      • Analyze logs and investigate suspicious activity<br>
+      • Perform initial incident response and escalation
+    </p>
+  </div>
 </section>
 
 <section id="skills">
@@ -136,7 +181,8 @@ section{padding:80px 60px}
   <div class="skills">
     <span>SIEM</span><span>Splunk</span><span>ELK</span>
     <span>Linux</span><span>Networking</span>
-    <span>Wireshark</span><span>Nmap</span><span>AWS Security</span>
+    <span>Wireshark</span><span>Nmap</span>
+    <span>AWS Security</span>
   </div>
 </section>
 
@@ -146,24 +192,24 @@ section{padding:80px 60px}
 </section>
 
 <script>
-/* ================= TYPING ================= */
+/* TYPING */
 const text="SOC Analyst Aspirant | Cybersecurity Enthusiast | Linux & Networking";
 let i=0;
 function type(){
   if(i<text.length){
     document.getElementById("typing").innerHTML+=text[i++];
-    setTimeout(type,50);
+    setTimeout(type,45);
   }
 }
 type();
 
-/* ================= SOC LOGS ================= */
+/* LOGS */
 const logs=[
- "[INFO] SIEM connected",
- "[ALERT] Suspicious IP detected",
- "[INFO] Analyzing logs...",
- "[SUCCESS] Threat mitigated",
- "[INFO] Network monitoring active"
+ "[INFO] SIEM connected successfully",
+ "[ALERT] Unusual login detected",
+ "[INFO] Correlating events...",
+ "[SUCCESS] Incident closed",
+ "[INFO] Continuous monitoring enabled"
 ];
 let j=0;
 setInterval(()=>{
@@ -171,7 +217,7 @@ setInterval(()=>{
   log.innerHTML+=logs[j%logs.length]+"<br>";
   log.scrollTop=log.scrollHeight;
   j++;
-},1000);
+},1100);
 </script>
 
 </body>
