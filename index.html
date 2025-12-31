@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nivrashu Saini | SOC Analyst</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ================= RESET ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#050510;
+  color:#00fff7;
+  font-family:'Orbitron',sans-serif;
+  overflow-x:hidden;
+}
+
+/* ================= GRID BACKGROUND ================= */
+.grid{
+  position:fixed;
+  inset:-100%;
+  background:
+    linear-gradient(#00fff722 1px,transparent 1px),
+    linear-gradient(90deg,#00fff722 1px,transparent 1px);
+  background-size:50px 50px;
+  animation:gridMove 20s linear infinite;
+  z-index:-1;
+}
+@keyframes gridMove{
+  from{transform:translate(0,0)}
+  to{transform:translate(-50px,-50px)}
+}
+
+/* ================= NAV ================= */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+}
+nav ul{display:flex;list-style:none;gap:30px}
+nav a{text-decoration:none;color:#00fff7}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  gap:40px;
+}
+.hero img{
+  width:260px;
+  border-radius:50%;
+  box-shadow:0 0 30px #00fff7;
+}
+
+/* GLITCH */
+.glitch{
+  font-size:3.5rem;
+  position:relative;
+}
+.glitch::before,.glitch::after{
+  content:attr(data-text);
+  position:absolute;left:0;top:0;
+}
+.glitch::before{
+  color:#ff00ff;
+  animation:glitch 2s infinite;
+}
+@keyframes glitch{
+  0%{transform:translate(0)}
+  20%{transform:translate(-2px,2px)}
+  40%{transform:translate(2px,-2px)}
+}
+
+/* ================= TERMINAL ================= */
+.terminal{
+  margin:40px;
+  padding:20px;
+  border:1px solid #00fff7;
+  box-shadow:0 0 20px #00fff7;
+  background:#02020a;
+  font-size:0.85rem;
+  height:160px;
+  overflow:auto;
+}
+
+/* ================= SECTIONS ================= */
+section{padding:80px 60px}
+.skills span{
+  display:inline-block;
+  margin:10px;
+  padding:10px 15px;
+  border:1px solid #00fff7;
+  box-shadow:0 0 10px #00fff7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid"></div>
+
+<nav>
+  <h2>NSOC</h2>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1 class="glitch" data-text="Nivrashu Saini">Nivrashu Saini</h1>
+    <p id="typing"></p>
+  </div>
+  <img src="profile.jpg" alt="Nivrashu">
+</section>
+
+<div class="terminal" id="log"></div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Associate SOC Analyst & Cybersecurity Enthusiast with strong hands-on
+    experience in SIEM, log analysis, Linux, networking and threat monitoring.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Core Skills</h2>
+  <div class="skills">
+    <span>SIEM</span><span>Splunk</span><span>ELK</span>
+    <span>Linux</span><span>Networking</span>
+    <span>Wireshark</span><span>Nmap</span><span>AWS Security</span>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: yashsaini62007@icloud.com</p>
+</section>
+
+<script>
+/* ================= TYPING ================= */
+const text="SOC Analyst Aspirant | Cybersecurity Enthusiast | Linux & Networking";
+let i=0;
+function type(){
+  if(i<text.length){
+    document.getElementById("typing").innerHTML+=text[i++];
+    setTimeout(type,50);
+  }
+}
+type();
+
+/* ================= SOC LOGS ================= */
+const logs=[
+ "[INFO] SIEM connected",
+ "[ALERT] Suspicious IP detected",
+ "[INFO] Analyzing logs...",
+ "[SUCCESS] Threat mitigated",
+ "[INFO] Network monitoring active"
+];
+let j=0;
+setInterval(()=>{
+  const log=document.getElementById("log");
+  log.innerHTML+=logs[j%logs.length]+"<br>";
+  log.scrollTop=log.scrollHeight;
+  j++;
+},1000);
+</script>
+
+</body>
+</html>
