@@ -5,62 +5,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nivrashu Saini | SOC Analyst</title>
 
+<!-- FONTS & ICONS -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   background:#0b0f14;
   color:#e6f1ff;
   font-family:'Orbitron',sans-serif;
 }
 
-/* GRID */
+/* GRID BACKGROUND */
 .grid{
   position:fixed;inset:-100%;
   background:
    linear-gradient(#1f293733 1px,transparent 1px),
    linear-gradient(90deg,#1f293733 1px,transparent 1px);
   background-size:60px 60px;
-  animation:gridMove 25s linear infinite;
+  animation:grid 30s linear infinite;
   z-index:-1;
 }
-@keyframes gridMove{
-  to{transform:translate(-60px,-60px)}
-}
+@keyframes grid{to{transform:translate(-60px,-60px)}}
 
 /* NAV */
 nav{
   display:flex;justify-content:space-between;
-  padding:20px 60px;
+  padding:20px 60px;position:sticky;top:0;
+  background:#0b0f14cc;backdrop-filter:blur(8px);
 }
 nav ul{display:flex;gap:30px;list-style:none}
-nav a{color:#9fb3c8;text-decoration:none}
+nav a{text-decoration:none;color:#9fb3c8;font-size:0.85rem}
 nav a:hover{color:#00eaff}
 
 /* HERO */
 .hero{
   min-height:90vh;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
+  display:flex;justify-content:space-around;align-items:center;
 }
 .hero img{
-  width:240px;
-  border-radius:50%;
+  width:240px;border-radius:50%;
   border:3px solid #1f2937;
+  box-shadow:0 0 30px #00eaff33;
 }
 .socials a{
-  margin-right:15px;
-  font-size:1.4rem;
-  color:#9fb3c8;
+  margin-right:15px;font-size:1.4rem;color:#9fb3c8
 }
 .socials a:hover{color:#00eaff}
 
+/* BUTTON */
+.btn{
+  display:inline-block;margin-top:20px;
+  padding:10px 20px;
+  border:1px solid #00eaff;
+  color:#00eaff;text-decoration:none;
+}
+.btn:hover{background:#00eaff;color:#020617}
+
 /* SECTION */
-section{padding:80px 60px}
+section{padding:90px 60px}
 h2{color:#00eaff;margin-bottom:20px}
+
+/* ANIMATION */
+.reveal{opacity:0;transform:translateY(40px);transition:0.8s}
+.reveal.active{opacity:1;transform:none}
 
 /* DASHBOARD */
 .dashboard{
@@ -69,48 +79,32 @@ h2{color:#00eaff;margin-bottom:20px}
   gap:20px;
 }
 .card{
-  background:#020617;
-  border:1px solid #1f2937;
-  padding:20px;
+  background:#020617;border:1px solid #1f2937;padding:20px
 }
 .card h3{color:#9fb3c8;font-size:0.9rem}
 .card p{font-size:2rem;color:#00eaff}
 
-/* ALERT TABLE */
-.alerts{
-  margin-top:30px;
-  background:#020617;
-  border:1px solid #1f2937;
-}
+/* ALERT FEED */
 .alerts div{
-  display:flex;
-  justify-content:space-between;
-  padding:12px 15px;
-  border-bottom:1px solid #1f2937;
-  font-size:0.85rem;
+  display:flex;justify-content:space-between;
+  padding:10px;border-bottom:1px solid #1f2937;
+  font-size:0.85rem
 }
-.badge{
-  padding:2px 8px;
-  border-radius:4px;
-}
-.critical{background:#7f1d1d;color:#fecaca}
-.high{background:#78350f;color:#fde68a}
-.medium{background:#1e3a8a;color:#bfdbfe}
+.badge{padding:2px 8px;border-radius:4px}
+.critical{background:#7f1d1d}
+.high{background:#78350f}
+.medium{background:#1e3a8a}
 
-/* EXPERIENCE */
-.exp{
-  background:#020617;
-  border-left:3px solid #00eaff;
-  padding:20px;
+/* PROJECTS */
+.project{
+  background:#020617;border-left:3px solid #00eaff;
+  padding:20px;margin-bottom:20px
 }
 
 /* SKILLS */
 .skills span{
-  display:inline-block;
-  margin:8px;
-  padding:8px 14px;
-  background:#020617;
-  border:1px solid #1f2937;
+  display:inline-block;margin:8px;padding:8px 14px;
+  border:1px solid #1f2937;background:#020617
 }
 </style>
 </head>
@@ -122,77 +116,106 @@ h2{color:#00eaff;margin-bottom:20px}
   <h2>NSOC</h2>
   <ul>
     <li><a href="#dashboard">Dashboard</a></li>
-    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
   </ul>
 </nav>
 
-<section class="hero">
+<section class="hero reveal">
   <div>
     <h1>Nivrashu Saini</h1>
-    <p>SOC Analyst Aspirant | Cybersecurity Enthusiast</p>
+    <p>Associate SOC Analyst | Cybersecurity Enthusiast</p>
     <div class="socials">
       <a href="#"><i class="fab fa-linkedin"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
+    <a class="btn" href="resume.pdf" download>Download Resume</a>
   </div>
   <img src="profile.jpg">
 </section>
 
-<!-- SOC DASHBOARD -->
-<section id="dashboard">
-  <h2>SOC Monitoring Dashboard</h2>
-
+<!-- DASHBOARD -->
+<section id="dashboard" class="reveal">
+  <h2>SOC Dashboard</h2>
   <div class="dashboard">
-    <div class="card"><h3>Total Alerts</h3><p id="total">124</p></div>
-    <div class="card"><h3>Critical</h3><p id="critical">12</p></div>
-    <div class="card"><h3>High</h3><p id="high">34</p></div>
-    <div class="card"><h3>Medium</h3><p id="medium">78</p></div>
+    <div class="card"><h3>Total Alerts</h3><p id="total">128</p></div>
+    <div class="card"><h3>Critical</h3><p>14</p></div>
+    <div class="card"><h3>High</h3><p>36</p></div>
+    <div class="card"><h3>Medium</h3><p>78</p></div>
   </div>
 
-  <div class="alerts" id="alertFeed">
-    <div><span>Suspicious SSH Login</span><span class="badge critical">Critical</span></div>
-    <div><span>Malware Hash Detected</span><span class="badge high">High</span></div>
-    <div><span>Port Scan Detected</span><span class="badge medium">Medium</span></div>
+  <div class="card" style="margin-top:20px">
+    <div class="alerts" id="feed">
+      <div><span>SSH Brute Force</span><span class="badge critical">Critical</span></div>
+      <div><span>Malware Hash Match</span><span class="badge high">High</span></div>
+      <div><span>Port Scan</span><span class="badge medium">Medium</span></div>
+    </div>
   </div>
 </section>
 
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="exp">
-    <h3>Associate SOC Analyst</h3>
-    <p>Oct 2025 – Present</p>
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+  <h2>Projects & Case Studies</h2>
+
+  <div class="project">
+    <h3>SIEM Log Analysis Case Study</h3>
     <p>
-      • SIEM monitoring & alert triage<br>
-      • Log analysis & threat investigation<br>
-      • Incident escalation & reporting
+      Investigated suspicious authentication logs using Splunk.
+      Identified brute-force patterns and escalated incident.
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>Nmap Network Scan & Risk Analysis</h3>
+    <p>
+      Performed full TCP/UDP scan, identified exposed services,
+      mapped attack surface and documented findings.
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>VirusTotal Malware Analysis</h3>
+    <p>
+      Analyzed hashes & URLs, correlated threat intel
+      and assessed malware behavior.
     </p>
   </div>
 </section>
 
-<section id="skills">
+<!-- SKILLS -->
+<section id="skills" class="reveal">
   <h2>Core Skills</h2>
   <div class="skills">
     <span>SIEM</span><span>Splunk</span><span>ELK</span>
     <span>Linux</span><span>Networking</span>
-    <span>Wireshark</span><span>Nmap</span><span>AWS Security</span>
+    <span>Wireshark</span><span>Nmap</span>
+    <span>AWS Security</span>
   </div>
 </section>
 
 <script>
-/* LIVE ALERT FEED */
+/* SCROLL REVEAL */
+const reveals=document.querySelectorAll(".reveal");
+window.addEventListener("scroll",()=>{
+  reveals.forEach(r=>{
+    const top=r.getBoundingClientRect().top;
+    if(top<window.innerHeight-100)r.classList.add("active");
+  });
+});
+
+/* LIVE ALERTS */
+const feed=document.getElementById("feed");
 const alerts=[
- ["Multiple Failed Logins","critical"],
- ["Suspicious DNS Query","high"],
- ["New Device Connected","medium"]
+ ["Suspicious Login","critical"],
+ ["DNS Tunneling","high"],
+ ["New Device Detected","medium"]
 ];
 setInterval(()=>{
-  const feed=document.getElementById("alertFeed");
   const a=alerts[Math.floor(Math.random()*alerts.length)];
   const div=document.createElement("div");
   div.innerHTML=`<span>${a[0]}</span><span class="badge ${a[1]}">${a[1]}</span>`;
   feed.prepend(div);
-},3000);
+},4000);
 </script>
 
 </body>
