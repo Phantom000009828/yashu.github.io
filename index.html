@@ -304,6 +304,189 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SOC Analyst | Live Clock</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #05070a;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Clock Card */
+        .clock-card {
+            width: 350px;
+            padding: 30px;
+            text-align: center;
+
+            background: rgba(15, 20, 25, 0.95);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 18px;
+
+            box-shadow:
+                0 0 30px rgba(0, 255, 136, 0.08);
+        }
+
+        /* Live Indicator */
+        .status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 18px;
+
+            color: #00ff88;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+
+            background: #00ff88;
+            border-radius: 50%;
+
+            box-shadow: 0 0 10px #00ff88;
+
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Time */
+        #clock {
+            font-family: "Courier New", monospace;
+            font-size: 42px;
+            font-weight: bold;
+
+            color: #ffffff;
+
+            letter-spacing: 2px;
+
+            text-shadow:
+                0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        /* Date */
+        #date {
+            margin-top: 12px;
+
+            color: #8b949e;
+            font-family: monospace;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        /* Timezone */
+        .timezone {
+            margin-top: 8px;
+
+            color: #00ff88;
+            font-family: monospace;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="clock-card">
+
+        <div class="status">
+            <span class="live-dot"></span>
+            LIVE SYSTEM TIME
+        </div>
+
+        <div id="clock">
+            00:00:00
+        </div>
+
+        <div id="date">
+            Loading...
+        </div>
+
+        <div class="timezone">
+            UTC+05:30 • IST
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function updateClock() {
+
+            const now = new Date();
+
+            /* Current Time */
+            const time = now.toLocaleTimeString("en-IN", {
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: true
+            });
+
+            /* Current Date */
+            const date = now.toLocaleDateString("en-IN", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            });
+
+            document.getElementById("clock").textContent = time;
+
+            document.getElementById("date").textContent =
+                date.toUpperCase();
+        }
+
+
+        /* Run immediately */
+        updateClock();
+
+        /* Update every second */
+        setInterval(updateClock, 1000);
+
+    </script>
+
+</body>
+</html>
+
+    
 </script>
 </body>
 </html>
