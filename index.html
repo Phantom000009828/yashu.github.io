@@ -56,8 +56,8 @@ a{color:inherit;text-decoration:none}
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    margin: 20px auto;
-    padding: 15px 25px;
+    margin: 15px auto;
+    padding: 10px 20px;
     width: fit-content;
     border: 1px solid var(--green);
     border-radius: 12px;
@@ -67,7 +67,7 @@ a{color:inherit;text-decoration:none}
 
 #clock {
     font-family: 'Space Mono', monospace;
-    font-size: 28px;
+    font-size: 23px;
     font-weight: bold;
     color: var(--green);
     letter-spacing: 2px;
@@ -75,7 +75,7 @@ a{color:inherit;text-decoration:none}
 
 #date {
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 10px;
     color: var(--text);
     opacity: 0.7;
 }
@@ -89,16 +89,18 @@ a{color:inherit;text-decoration:none}
     
     <a class="brand" href="#top"><span>nv</span>@soc-station<span class="cursor">_</span></a>
     <nav>  
-      <div class="live-clock">
-    <span id="clock">00:00:00</span>
-    <span id="date">Loading...</span>
-</div>
+      
       <a href="#profile">profile</a>
       <a href="#skills">skills</a>
       <a href="#projects">projects</a>
       <a href="#timeline">timeline</a>
       <a href="#certs">certs</a>
-      <a href="#contact">contact</a>
+      <a href="#contact">contact</a> 
+<div class="live-clock">
+    <span id="clock">00:00:00</span>
+    <span id="date">Loading...</span>
+</div>
+      
     </nav>
     <a class="nav-cta" href="Resume.pdf" download>↓ resume</a>
   </header>
