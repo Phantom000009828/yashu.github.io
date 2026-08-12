@@ -1,364 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-
-  <section class="hero">
-  <h1 class="glow">Nivrashu Saini</h1>
-  <h2 class="typing"></h2>
-
-  <div class="hero-buttons">
-    <a href="https://github.com/Phantom000009828">Github</a>
-    <a href="https://www.linkedin.com/in/nivrashu-saini-2b880027b/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BXmvKlUR%2FTmeu1MQr3ayfUg%3D%3D" target="_blank">LinkedIn</a>
-    <a href="mailto:sk2421473@gmail.com">Email</a>
-  </div>
-</section>
-
-<meta charset="UTF-8">
-<title>Nivrashu Saini | SOC Analyst Portfolio</title>
-
-<style> 
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  background: radial-gradient(circle at top, #020617, #020617 40%, #020617);
-  color: #e5e7eb;
-  overflow-x: hidden;
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Layout */
-.wrapper {
-  display: flex;
-  min-height: 100vh;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 280px;
-  background: linear-gradient(180deg, #020617, #020617);
-  padding: 40px 25px;
-  position: fixed;
-  height: 100%;
-  border-right: 1px solid rgba(56,189,248,0.15);
-  box-shadow: inset -10px 0 30px rgba(0,0,0,0.6);
-}
-
-.sidebar h1 {
-  font-size: 26px;
-  color: #22d3ee;
-  margin-bottom: 10px;
-}
-
-.sidebar p {
-  font-size: 14px;
-  color: #9ca3af;
-  margin-bottom: 30px;
-}
-
-.sidebar a {
-  display: block;
-  color: #67e8f9;
-  text-decoration: none;
-  margin-bottom: 14px;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  color: #22d3ee;
-  transform: translateX(8px);
-}
-
-/* Main content */
-.content {
-  margin-left: 300px;
-  padding: 70px;
-  max-width: 1000px;
-}
-
-/* Section animation */
-section {
-  margin-bottom: 70px;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.9s ease forwards;
-}
-
-section:nth-child(2) { animation-delay: 0.15s; }
-section:nth-child(3) { animation-delay: 0.3s; }
-section:nth-child(4) { animation-delay: 0.45s; }
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-section h2 {
-  font-size: 26px;
-  color: #22d3ee;
-  margin-bottom: 18px;
-}
-
-/* Glass card */
-.card {
-  background: rgba(15,23,42,0.7);
-  backdrop-filter: blur(14px);
-  padding: 28px;
-  border-radius: 18px;
-  border: 1px solid rgba(34,211,238,0.2);
-  box-shadow:
-    0 0 0 rgba(0,0,0,0),
-    0 20px 50px rgba(0,0,0,0.6);
-  transition: 0.4s;
-}
-
-.card:hover {
-  box-shadow:
-    0 0 25px rgba(34,211,238,0.35),
-    0 30px 70px rgba(0,0,0,0.8);
-}
-
-/* Skills */
-.skill {
-  display: inline-block;
-  margin: 8px;
-  padding: 10px 18px;
-  border-radius: 30px;
-  background: rgba(2,6,23,0.9);
-  border: 1px solid rgba(34,211,238,0.35);
-  color: #67e8f9;
-  font-size: 14px;
-  transition: 0.35s;
-}
-
-.skill:hover {
-  background: #22d3ee;
-  color: #020617;
-  transform: translateY(-6px) scale(1.08);
-  box-shadow: 0 10px 30px rgba(34,211,238,0.45);
-}
-
-/* Projects */
-.project {
-  margin-bottom: 30px;
-  padding: 26px;
-  border-radius: 18px;
-  background: linear-gradient(145deg, #020617, #0f172a);
-  border: 1px solid rgba(34,211,238,0.25);
-  transition: 0.4s;
-  position: relative;
-  overflow: hidden;
-}
-
-.project::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(34,211,238,0.15), transparent);
-  transform: translateX(-100%);
-  transition: 0.6s;
-}
-
-.project:hover::before {
-  transform: translateX(100%);
-}
-
-.project:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(34,211,238,0.35);
-}
-
-.project h3 {
-  color: #e5e7eb;
-  margin-bottom: 10px;
-}
-
-.project a {
-  color: #22d3ee;
-  text-decoration: none;
-}
-
-.project a:hover {
-  text-decoration: underline;
-}
-
-  #bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-}
-
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b0a">
+  <meta name="description" content="Nivrashu Saini — Cybersecurity portfolio, SOC Analyst L1 aspirant, Linux & Networking.">
+  <title>Nivrashu Saini // Cybersecurity</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="scanlines"></div>
+  <div class="noise"></div>
 
+  <header class="nav">
+    <a class="brand" href="#top"><span>nv</span>@soc-station<span class="cursor">_</span></a>
+    <nav>
+      <a href="#profile">profile</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#timeline">timeline</a>
+      <a href="#certs">certs</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <a class="nav-cta" href="resume.pdf" download>↓ resume</a>
+  </header>
 
-  <style>
-
-
-    .hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 64px;
-  color: #22d3ee;
-  text-shadow: 0 0 25px rgba(34,211,238,0.6);
-}
-
-.hero h2 {
-  margin-top: 10px;
-  color: #e5e7eb;
-  font-size: 22px;
-}
-
-.hero-buttons {
-  margin-top: 30px;
-}
-
-.hero-buttons a {
-  margin: 10px;
-  padding: 14px 26px;
-  border-radius: 40px;
-  border: 1px solid #22d3ee;
-  color: #22d3ee;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.hero-buttons a:hover {
-  background: #22d3ee;
-  color: #020617;
-  box-shadow: 0 0 25px rgba(34,211,238,0.6);
-}
-
-  </style>
-<canvas id="bg"></canvas>
-
-<div class="wrapper">
-
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <h1>Nivrashu Saini</h1>
-    <p>SOC Analyst L1 Aspirant<br>Linux • Networking • Log Analysis</p>
-
-    <a href="https://github.com/Phantom000009828">GitHub</a>
-    <a href="https://www.linkedin.com/in/nivrashu-saini-2b880027b/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BXmvKlUR%2FTmeu1MQr3ayfUg%3D%3D">LinkedIn</a>
-    <a href="mailto:sk2421473@gmail.com">Email</a>
-  </div>
-
-  <!-- CONTENT -->
-  <div class="content">
-
-    <section>
-      <h2>About Me</h2>
-      <div class="card">
-        I am a SOC Analyst L1 aspirant with hands-on experience in Linux log
-        analysis, network scanning, and security risk assessment. I am
-        passionate about monitoring, detecting, and analyzing security threats
-        in real-world environments.
+  <main id="top">
+    <section class="hero section-pad">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot"></span> STATUS: OPEN TO WORK</div>
+        <div class="terminal-line">nivrashu@soc-station:~$ <span id="typed">whoami</span><span class="cursor">█</span></div>
+        <h1>Nivrashu<br><span>Saini</span></h1>
+        <p class="role">// SOC ANALYST L1 ASPIRANT · CYBERSECURITY · LINUX · NETWORKING</p>
+        <p class="lede">I build security skills by working from the signal outward — understanding networks, reading logs, testing attack surfaces, and documenting what I find.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">▸ view projects</a>
+          <a class="btn" href="https://www.linkedin.com/in/nivrashu-saini-2b880027b/" target="_blank" rel="noreferrer">↗ linkedin</a>
+        </div>
+        <div class="contact-strip">
+          <span>New Delhi, India</span>
+          <span>•</span>
+          <span>IGNOU · BCA</span>
+          <span>•</span>
+          <span>Cybersecurity Diploma</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="terminal-head"><span>●</span><span>●</span><span>●</span><b>security_profile.json</b><span>1.2 KB</span></div>
+        <div class="terminal-body">
+          <div class="code-row"><span class="ln">01</span><span>{</span></div>
+          <div class="code-row"><span class="ln">02</span><span><i>"name"</i>: <em>"Nivrashu Saini"</em>,</span></div>
+          <div class="code-row"><span class="ln">03</span><span><i>"focus"</i>: <em>"SOC Analyst L1"</em>,</span></div>
+          <div class="code-row"><span class="ln">04</span><span><i>"os"</i>: <em>"Linux / Windows"</em>,</span></div>
+          <div class="code-row"><span class="ln">05</span><span><i>"networking"</i>: <em>"TCP/IP · DNS · Routing"</em>,</span></div>
+          <div class="code-row"><span class="ln">06</span><span><i>"siem"</i>: <em>"Splunk · ELK"</em>,</span></div>
+          <div class="code-row"><span class="ln">07</span><span><i>"tools"</i>: <em>"Nmap · Wireshark · Burp"</em>,</span></div>
+          <div class="code-row"><span class="ln">08</span><span><i>"certs"</i>: <em>"CEH · AWS · Linux"</em>,</span></div>
+          <div class="code-row"><span class="ln">09</span><span><i>"status"</i>: <strong>"learning → building"</strong></span></div>
+          <div class="code-row"><span class="ln">10</span><span>}</span></div>
+          <div class="mini-output">✓ profile loaded<br>✓ telemetry online<br>✓ ready for security work</div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Skills</h2>
-      <div class="card">
-        <span class="skill">SOC Operations</span>
-        <span class="skill">Linux</span>
-        <span class="skill">Nmap</span>
-        <span class="skill">Log Analysis</span>
-        <span class="skill">Network Security</span>
-        <span class="skill">Incident Response</span>
+    <section id="profile" class="section-pad">
+      <div class="section-label">01 / PROFILE</div>
+      <div class="split">
+        <div>
+          <h2>Security mindset,<br><span>hands-on execution.</span></h2>
+        </div>
+        <div class="prose">
+          <p>I am a SOC Analyst L1 aspirant with a foundation in cybersecurity, Linux, networking and security monitoring. I enjoy turning raw technical signals into something understandable: what happened, why it matters, and what should happen next.</p>
+          <p>My current learning path combines SOC operations, log analysis, networking fundamentals, Linux administration, cloud security and ethical hacking.</p>
+          <div class="stats">
+            <div><strong>02</strong><span>security projects</span></div>
+            <div><strong>05+</strong><span>certifications / credentials</span></div>
+            <div><strong>01</strong><span>cybersecurity internship</span></div>
+            <div><strong>∞</strong><span>labs & learning</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Projects</h2>
-
-      <div class="project">
-        <h3>Linux Log Analysis – SSH Brute Force Detection</h3>
-        <p>Analyzed authentication logs to detect brute-force attacks.</p>
-        <a href="https://github.com/Phantom000009828/soc-analyst-linux-log-analysis">View on GitHub</a>
+    <section id="skills" class="section-pad">
+      <div class="section-label">02 / CAPABILITY MATRIX</div>
+      <div class="matrix">
+        <div class="matrix-intro">
+          <h2>What I reach for<br><span>first on a task.</span></h2>
+          <p>Self-assessed learning focus, not a benchmark. The goal is to show where I spend practical time and what I am actively strengthening.</p>
+        </div>
+        <div class="bars">
+          <div class="bar"><div><span>SOC Monitoring & Log Analysis</span><b>78%</b></div><i style="--w:78%"></i></div>
+          <div class="bar"><div><span>Linux & System Monitoring</span><b>82%</b></div><i style="--w:82%"></i></div>
+          <div class="bar"><div><span>Networking Fundamentals</span><b>80%</b></div><i style="--w:80%"></i></div>
+          <div class="bar"><div><span>Security Tooling</span><b>76%</b></div><i style="--w:76%"></i></div>
+          <div class="bar"><div><span>Python / Bash Scripting</span><b>65%</b></div><i style="--w:65%"></i></div>
+          <div class="bar"><div><span>AWS / Cloud Security</span><b>60%</b></div><i style="--w:60%"></i></div>
+        </div>
       </div>
 
-      <div class="project">
-        <h3>Nmap Network Scanning & Risk Analysis</h3>
-        <p>Performed SYN scanning to identify open ports and insecure services.</p>
-        <a href="https://github.com/Phantom000009828/Nmap-Network-Scanning-and-Risk-Analysis">View on GitHub</a>
+      <div class="tool-cloud">
+        <span>Linux</span><span>Windows</span><span>TCP/IP</span><span>DNS</span><span>SSH</span>
+        <span>Nmap</span><span>Wireshark</span><span>Burp Suite</span><span>Splunk</span><span>ELK</span>
+        <span>Python</span><span>Bash</span><span>AWS</span><span>SIEM</span><span>Incident Response</span>
+        <span>Log Analysis</span><span>VirusTotal</span><span>Hydra</span>
       </div>
-
     </section>
 
-  </div>
-</div>
-<script>
-const text = "SOC Analyst L1 | Linux | SIEM | Threat Detection";
-let i = 0;
-function type() {
-  if (i < text.length) {
-    document.querySelector(".typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 70);
-  }
-}
-type();
+    <section id="projects" class="section-pad">
+      <div class="section-label">03 / PROJECTS & FINDINGS</div>
+      <div class="section-head">
+        <h2>Built in the lab.<br><span>Documented like security work.</span></h2>
+        <span class="section-note">click a card to inspect</span>
+      </div>
 
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-top"><span class="tag high">NETWORK</span><span>01</span></div>
+          <h3>Nmap Network Scanning & Risk Analysis</h3>
+          <p>Performed Nmap SYN scanning in a controlled lab to identify open ports, exposed services and potential network security risks.</p>
+          <div class="evidence"><span>▸ Recon</span><span>▸ Port discovery</span><span>▸ Service analysis</span></div>
+          <div class="card-foot"><span>Nmap · Networking · SOC</span><a href="https://github.com/Phantom000009828" target="_blank" rel="noreferrer">↗ GitHub</a></div>
+        </article>
 
-  
-</script>
+        <article class="project-card reveal">
+          <div class="project-top"><span class="tag medium">SOC / LINUX</span><span>02</span></div>
+          <h3>Linux Log Analysis — SSH Brute-Force Detection</h3>
+          <p>Analyzed Linux authentication logs with journalctl on a systemd-based environment, looking for repeated failed SSH authentication patterns.</p>
+          <div class="evidence"><span>▸ Log triage</span><span>▸ Authentication events</span><span>▸ Detection logic</span></div>
+          <div class="card-foot"><span>Linux · journalctl · SOC</span><a href="https://github.com/Phantom000009828" target="_blank" rel="noreferrer">↗ GitHub</a></div>
+        </article>
+      </div>
 
+      <div class="finding">
+        <div class="finding-title"><span>LIVE CASE NOTE</span><b>How I approach a suspicious event</b></div>
+        <div class="finding-flow">
+          <div><strong>01</strong><span>Collect</span><small>logs / packets / context</small></div>
+          <div class="arrow">→</div>
+          <div><strong>02</strong><span>Correlate</span><small>source · time · behavior</small></div>
+          <div class="arrow">→</div>
+          <div><strong>03</strong><span>Validate</span><small>rule out false positives</small></div>
+          <div class="arrow">→</div>
+          <div><strong>04</strong><span>Respond</span><small>document · escalate · learn</small></div>
+        </div>
+      </div>
+    </section>
 
-  <script>
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    <section id="timeline" class="section-pad">
+      <div class="section-label">04 / TIMELINE</div>
+      <div class="timeline">
+        <div class="time-card">
+          <span class="time">JAN 2026 — PRESENT</span>
+          <h3>Cybersecurity Intern</h3>
+          <h4>Unified Mentor</h4>
+          <p>Building practical exposure to cybersecurity concepts, Linux, networking, security monitoring and structured technical work.</p>
+        </div>
+        <div class="time-card">
+          <span class="time">2026 — 2028</span>
+          <h3>BCA — Computer Science</h3>
+          <h4>IGNOU</h4>
+          <p>Currently pursuing a Bachelor of Computer Applications while continuing hands-on cybersecurity learning.</p>
+        </div>
+        <div class="time-card">
+          <span class="time">CURRENT</span>
+          <h3>Diploma — Cybersecurity</h3>
+          <h4>Craw Security</h4>
+          <p>Focused training across Linux, ethical hacking, cloud/security fundamentals and practical tooling.</p>
+        </div>
+        <div class="time-card">
+          <span class="time">2025 — PRESENT</span>
+          <h3>SOC Analyst Learning Track</h3>
+          <h4>Self-directed</h4>
+          <p>Developing an L1-ready workflow around SIEM, log analysis, networking, incident response and security operations.</p>
+        </div>
+      </div>
+    </section>
 
-let particles = [];
-for (let i = 0; i < 80; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: Math.random() - 0.5,
-    dy: Math.random() - 0.5
-  });
-}
+    <section id="certs" class="section-pad">
+      <div class="section-label">05 / CREDENTIALS</div>
+      <div class="cert-grid">
+        <div class="cert"><span class="cert-icon">CEH</span><div><b>Certified Ethical Hacker</b><small>Craw Security · Issued Mar 2026</small></div></div>
+        <div class="cert"><span class="cert-icon">AWS</span><div><b>AWS Certifications</b><small>Craw Security · Issued Jan 2026</small></div></div>
+        <div class="cert"><span class="cert-icon">LNX</span><div><b>Linux Essentials Certification</b><small>Craw Security</small></div></div>
+        <div class="cert"><span class="cert-icon">DLO</span><div><b>Deloitte Australia — Cyber Job Simulation</b><small>Forage · Issued Jul 2026</small></div></div>
+        <div class="cert"><span class="cert-icon">MSDE</span><div><b>Security Analyst</b><small>MSDE Skill India · Issued Aug 2026</small></div></div>
+      </div>
+      <p class="credential-note">Credential links can be added to each card once the final public verification URLs are available.</p>
+    </section>
 
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "#22d3ee";
-  particles.forEach(p => {
-    p.x += p.dx;
-    p.y += p.dy;
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fill();
-  });
-  requestAnimationFrame(animate);
-}
-animate();
-</script>
+    <section class="section-pad education">
+      <div class="section-label">06 / EDUCATION & LANGUAGES</div>
+      <div class="edu-grid">
+        <div>
+          <h2>Learning never<br><span>goes offline.</span></h2>
+        </div>
+        <div class="edu-list">
+          <div><span>2026 — 2028</span><b>Bachelor of Computer Applications</b><small>IGNOU</small></div>
+          <div><span>2025 — PRESENT</span><b>Diploma in Cybersecurity</b><small>Craw Security</small></div>
+          <div><span>2025</span><b>Senior Secondary</b><small>PSEB · 70%</small></div>
+        </div>
+      </div>
+      <div class="language-line"><b>Languages</b><span>English — Professional</span><span>Hindi — Fluent</span><span>Punjabi — Fluent</span><span>French — Elementary</span></div>
+    </section>
 
+    <section id="contact" class="contact section-pad">
+      <div class="contact-terminal">
+        <div class="terminal-head"><span>●</span><span>●</span><span>●</span><b>contact.sh</b><span>READY</span></div>
+        <div class="contact-body">
+          <div class="terminal-line">nivrashu@soc-station:~$ ./contact.sh</div>
+          <h2>Let's lock down<br><span>something together.</span></h2>
+          <p>Open to entry-level SOC Analyst / Cybersecurity Analyst opportunities, internships and security projects.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://www.linkedin.com/in/nivrashu-saini-2b880027b/" target="_blank" rel="noreferrer">↗ connect on LinkedIn</a>
+            <a class="btn" href="https://github.com/Phantom000009828" target="_blank" rel="noreferrer">↗ GitHub</a>
+          </div>
+          <div class="terminal-line dim">status: <span class="green">open_to_work=true</span></div>
+        </div>
+      </div>
+      <footer>© 2026 Nivrashu Saini · Built with a terminal, not a template. <span>status: online</span></footer>
+    </section>
+  </main>
 
+  <script src="script.js"></script>
 </body>
 </html>
